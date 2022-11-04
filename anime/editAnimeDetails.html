@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Anime details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./editAnimeDetails.js"></script>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./form.css" />
+  </head>
+
+  <body>
+    <h1>EDIT AMIME DETAILS</h1>
+
+    <div id="form">
+      <form onsubmit="validate(event.preventDefault)">
+        <div class="row">
+          <div class="col">
+            <label> Anime Tilte:</label>
+            <input type="text" id="title" placeholder=" Title" required />
+          </div> 
+          
+          <div class="col">
+            <label> URL of the Anime Title Card </label>
+            <input type="url" id="img" placeholder="valid URL" required />
+          </div>
+
+          
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>Source</label>
+            <select name="source" id="source" required>
+              <option value="source">Source</option>
+              <option value="Manga">Manga</option>
+              <option value="Visual novel">Visual novel</option>
+              <option value="Novel">Novel</option>
+              <option value="Light novel">Light novel</option>
+              <option value="Original">Original</option></select>
+          </div> 
+
+          <div class="col">
+            <label>Status</label>
+            <select name="status" id="status">
+              <option value="status">Status</option>
+              <option value="Finished Airing">Finished Airing</option>
+              <option value="Currently Airing">Currently Airing</option></select
+            >
+          </div>
+
+          <div class="col">
+            <label>Duration of Each Episodes (in Min) </label>
+            <input type="number" id="duration" placeholder="eg. 30" required />
+          </div>
+
+          <div class="col">
+            <label> Total Number of Episodes: </label>
+            <input type="number" id="episodes" placeholder="eg. 200" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label>Aired from and to date:</label>
+            <div class="row">
+              <div class="col">
+                <input type="date" id="dateFrom"  required /> 
+              </div>
+              <div class="col">
+                <input type="date" id="dateTo"  required /><br />
+              </div>
+            </div>  
+          </div>
+
+          <div class="col">
+            <label>Score the Anime from 1 to 10</label>
+            <input
+              type="number"
+              placeholder="eg. Any number from 1 to 10"
+              id="score"
+              score
+            />
+          </div>
+
+          <div class="col">
+            <label>Rating of the Anime</label>
+            <input type="text" placeholder="Eg. Kids" id="rating" required /><br />
+          </div>
+
+          
+        
+          </div>
+
+          <div class="row">
+
+            <div class="col">
+              <label>Season</label>
+              <select name="season" id="season">
+                <option value="season">Season</option>
+                <option value="spring">spring</option>
+                <option value="fall">fall</option>
+                <option value="winter">Winter</option>
+                <option value="null">null</option>
+                <option value="summer">summer</option></select
+              >
+            </div>
+
+            <div class="col">
+              <label>Year of release</label>
+              <input type="number" id="year" placeholder="eg. 2021" required/><br />
+            </div>
+
+            <div class="col">
+              <label>What time is the Anime Broadcast</label>
+              <input
+                type="text"
+                placeholder="eg. Monday to Friday at 12:00 pm"
+                id="broadcast"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label>Synopsis</label> <br />
+              <textarea
+                rows="4"
+                cols="70"
+                id="synopsis"
+                placeholder="Brief of the Anime....">
+              </textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-1">
+              <button class="btn btn-primary" type="submit" id="button">
+                Submit
+              </button>
+            </div>
+          </div>
+
+      </form>
+          <div class="row">
+            <div class="col-sm-1" style="float: left ;">
+              <a href="./index.html"><button class="btn btn-primary" id="buttonclose">Close</button></a>
+            </div>
+          </div>  
+</div>
+
+    <script>
+      function validate(){
+      
+      var status = document.getElementById("status").value
+      var source = document.getElementById("source").value
+      var duration= document.getElementById("duration").value
+      var score= document.getElementById("score").value
+      var season= document.getElementById("season").value
+      
+      
+      if(status === "status"){
+        alert("Please enter the status of the anime")
+      }else if(source === "source"){
+        alert("Please enter the source of the anime")
+      }else if( duration > 120 ||duration < 1 ){
+        alert("Duration should be less than 120 minutes")
+      }else if( score > 10 ||score < 1 ){
+        alert("score should be between 1 to 10 only")
+      }else if( season === "season" ){
+        alert("Please enter the season of the anime")
+      }else {
+        store(), trial()
+      }
+    }
+    </script>
+  </body>
+</html>

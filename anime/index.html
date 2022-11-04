@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Anime Home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./styles.css">
+  
+    </head>
+
+    <body id="body">
+        <div id="container" >
+            <div id="selectors" >
+                <label for="year" id="yearLabel">Choose a year:</label>
+                <select name="year" id="year" onchange="yearOnChange(value)">
+                    <option value="year">year</option>
+                    <option value="2015" onclick="yearOnClick()">2015</option>
+                    <option value="2022">2022</option>
+                    <option value="2011">2011</option>
+                    <option value="2019">2019</option>
+                    <option value="2012">2012</option>
+                    <option value="2021">2021</option>
+                    <option value="2017">2017</option>
+
+                </select>
+               
+
+
+
+        <label for="source" id="sourceLabel">Choose a Source:</label>
+        <select name="source" id="source" onchange="sourceOnChange(value)">
+            <option value="source">Source</option>
+            <option value="Manga" >Manga</option>
+            <option value="Visual novel">Visual novel</option>
+            <option value="Novel">Novel</option>
+            <option value="Light novel">Light novel</option>
+            <option value="Original">Original</option>
+    
+        </select>
+
+        <label for="status" id="statusLabel">Choose a Status:</label>
+        <select name="status" id="status" onchange="statusOnChange(value)">
+            <option value="status">Status</option>
+            <option value="Finished Airing" >Finished Airing</option>
+            <option value="Currently Airing">Currently Airing </option>   
+        </select>
+
+        <label for="season" id="seasonLabel">Choose a Season:</label>
+        <select name="season" id="season" onchange="seasonOnChange(value)">
+            <option value="season">Season</option>
+            <option value="spring" >spring</option>
+            <option value="fall">fall</option>
+            <option value="winter">Winter</option>
+            <option value="null">null</option>
+            <option value="summer">summer</option>
+    
+        </select>
+
+        <a href="./animeDetails.html"><button id="add" class="btn btn-dark btn-sm" onclick="trial()" >ADD</button></a>
+           </div> 
+        </div>
+
+        <div class="row" id="row">
+          
+        </div>
+
+        
+
+        
+        
+
+
+
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>
